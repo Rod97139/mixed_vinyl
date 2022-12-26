@@ -7,13 +7,31 @@ use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use function Symfony\Component\String\u;
 
-class VinylController 
+class VinylController extends AbstractController
 {
     
     #[Route("/")]
     public function homepage(): Response
     {
-        return new Response('Title: PB and Jams');      
+
+        $tracks = [
+            ['song' => 'Gangsta\'s Paradise', 'artist' => 'Coolio'],
+            ['song' => 'Fantasy', 'artist' => 'Mariah Carey'],
+            ['song' => 'Gangsta\'s Paradise', 'artist' => 'Coolio'],
+            ['song' => 'Fantasy', 'artist' => 'Mariah Carey'],
+            ['song' => 'Gangsta\'s Paradise', 'artist' => 'Coolio'],
+            ['song' => 'Fantasy', 'artist' => 'Mariah Carey'],
+            ['song' => 'Gangsta\'s Paradise', 'artist' => 'Coolio'],
+            ['song' => 'Fantasy', 'artist' => 'Mariah Carey'],
+            ['song' => 'Gangsta\'s Paradise', 'artist' => 'Coolio'],
+            ['song' => 'Fantasy', 'artist' => 'Mariah Carey']
+            
+        ];
+
+        return $this->render('vinyl/homepage.html.twig', [
+            'title' => 'PB and Jams',
+            'tracks' => $tracks,
+        ]); 
     }
 
     #[Route("/browse/{slug}")]
