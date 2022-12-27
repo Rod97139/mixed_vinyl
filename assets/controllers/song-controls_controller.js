@@ -15,6 +15,7 @@ export default class extends Controller {
     //     console.log('I just appeared into existence !');
     // }
 
+    
     static values = {
         infoUrl: String
     }
