@@ -33,6 +33,7 @@
             </svg>
         </div>
         <div class="col-12 col-md-8 ps-5">
+
            
            {# <div data-controller="hello"></div> #}
            {# <div {{ stimulus_controller('song-controls') }}></div> #}
@@ -44,7 +45,7 @@
             <div class="song-list" {{ stimulus_controller('song-controls', {
                 infoUrl: path('api_songs_get_one', { id: loop.index })
             }) }} >
-            
+
                 <div class="d-flex mb-3">
                     <a href="#" {{ stimulus_action('song-controls', 'play')}}>
                         <i class="fas fa-play me-3"></i>
